@@ -28,7 +28,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Link = styled.p`
+export const Textlink = styled.p`
   color: #fff;
   text-decoration: none;
   margin-right: 30px;
@@ -50,7 +50,8 @@ export const Group = styled.div`
 `;
 
 export const SearchInput = styled.input`
-  background-color: rgba(64, 64, 64, 0.5);
+  
+background-color: rgba(64, 64, 64, 0.5);
   color: white;
   border: 1px solid white;
   transition: width 0.5s;
@@ -135,7 +136,7 @@ export const Dropdown = styled.div`
   top: 32px;
   right: 10px;
 
-  ${Group}:last-of-type ${Link} {
+  ${Group}:last-of-type ${Textlink} {
     cursor: pointer;
   }
 
@@ -146,7 +147,7 @@ export const Dropdown = styled.div`
       margin-bottom: 0;
     }
 
-    ${Link} {
+    ${Textlink} {
       cursor: pointer;
     }
 

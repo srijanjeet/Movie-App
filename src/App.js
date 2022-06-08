@@ -17,7 +17,7 @@ import Browse from './pages/browse';
 export default function App() {
   const user = useAuthListener();
   console.log(user);
-  return ( 
+  return (
     <>
       <BrowserRouter>
         {/* <Switch> */}
@@ -55,35 +55,50 @@ export default function App() {
 
 
 
-        <IsUserRedirect user = {user} loggedInPath={ROUTES.BROWSE} exact path={ROUTES.SIGN_IN} children={
-          <>
+        <IsUserRedirect user={user} loggedInPath={ROUTES.BROWSE} exact path={ROUTES.SIGN_IN}>
+          <HeaderContainer>
+            <SignInContainer />
+          </HeaderContainer>
+          <FooterContainer>
 
+          </FooterContainer>
+        </IsUserRedirect>
+
+
+
+
+        <IsUserRedirect loggedInPath={ROUTES.BROWSE} exact path={ROUTES.SIGN_UP}>
+          <>
             <HeaderContainer>
-              <SignInContainer />
+              <SignupContainer />
             </HeaderContainer>
             <FooterContainer>
 
             </FooterContainer>
           </>
-        }/>
 
-<IsUserRedirect loggedInPath = {ROUTES.BROWSE} exact path = {ROUTES.SIGN_UP} children = {
-  <>
-     <HeaderContainer>
+        </IsUserRedirect>
+
+
+
+
+
+
+        <ProtectedRoute user={user} exact path={ROUTES.BROWSE}>
+
+          <Browse />
+        </ProtectedRoute>
+
+
+        {/* <IsUserRedirect user={user} loggedInPath={ROUTES.BROWSE} path={ROUTES.Home}>
+          <HeaderContainer>
             <SignupContainer />
           </HeaderContainer>
           <FooterContainer>
 
           </FooterContainer>
-  </>
-}/>
+        </IsUserRedirect> */}
 
-
-        
-      <ProtectedRoute user = {user} exact path = {ROUTES.BROWSE}  children = {<>
-      <Browse/>
-      </>} />
-        
       </BrowserRouter>
 
     </>

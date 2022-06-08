@@ -14,13 +14,13 @@ export function IsUserRedirect({ user, loggedInPath, children, ...rest }) {
                     return children;
                 }
 
-                if (user) {
+                if (user.user=== null) {
                     // this runs if the user is present
                     return(
                         <Redirect to={{ pathname: loggedInPath, }} />
                     )
                 }
-                return null
+                return null;
             }}/>
               
     )
@@ -35,13 +35,17 @@ export function ProtectedRoute({ user, children, ...rest }) {
             if (user) {
                 return children;
             }
-            if (!user)
+            if (user.user===null)
             {
                 return (
                     <Redirect to ={{pathname: 'signin', 
                 state: {from:location},}}/>
                 )
             }
+            return null
         }}/>
     )
 }
+
+
+
