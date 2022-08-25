@@ -8,21 +8,21 @@ export function IsUserRedirect({ user, loggedInPath, children, ...rest }) {
     return (
         <Route {...rest}
             render={() => {
-                if (!user) {
+                if (user.user === null) {
                     // this condition runs if the user is not present in the database and then we return the children
                     console.log("user not found")
                     return children;
                 }
 
-                if (user.user=== null) {
+                if (user.user) {
                     // this runs if the user is present
-                    return(
+                    return (
                         <Redirect to={{ pathname: loggedInPath, }} />
                     )
                 }
                 return null;
-            }}/>
-              
+            }} />
+
     )
 
 
@@ -30,20 +30,26 @@ export function IsUserRedirect({ user, loggedInPath, children, ...rest }) {
 
 export function ProtectedRoute({ user, children, ...rest }) {
     return (
-        <Route {...rest} 
-        render = {({location}) =>{
-            if (user) {
-                return children;
-            }
-            if (user.user===null)
-            {
-                return (
-                    <Redirect to ={{pathname: 'signin', 
-                state: {from:location},}}/>
-                )
-            }
-            return null
-        }}/>
+        <Route {...rest}
+            render={({ location }) => {
+                if (user.user) {
+                    return children;
+                }
+                if (user.user === null) {
+                    return (
+                        <>
+                            <Redirect to={{
+                                pathname: 'signin',
+                                state: { from: location },
+                            }} />
+                            {console.log('jeet')}
+                        </>
+
+
+                    )
+                }
+                return null
+            }} />
     )
 }
 

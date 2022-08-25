@@ -67,7 +67,7 @@ export default function App() {
 
 
 
-        <IsUserRedirect loggedInPath={ROUTES.BROWSE} exact path={ROUTES.SIGN_UP}>
+        <IsUserRedirect user={user} loggedInPath={ROUTES.BROWSE} exact path={ROUTES.SIGN_UP}>
           <>
             <HeaderContainer>
               <SignupContainer />
