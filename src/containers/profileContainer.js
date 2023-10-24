@@ -9,7 +9,8 @@ export function SelectProfileContainer({user, setProfile}) {
       <>
       <Header bg = {false}>
         <Header.Frame>
-            <Header.Logo to={ROUTES.Home} src = {logo} alt = "Netflix"/>
+            {/* <Header.Logo to={ROUTES.Home} src = {logo} alt = "Nueflix"/> */}
+            <h1>Nueflix</h1>
         </Header.Frame>
       </Header>
 

@@ -43,7 +43,9 @@ export function BrowseContainer({ slides }) {
     }
   }, [searchTerm])
   
-
+  const handleClick = () => {
+    window.location.href = 'https://www3.zoechip.com/watch-movie/joker-9766.1608895';
+  };
 
   return (
     <>
@@ -54,7 +56,8 @@ export function BrowseContainer({ slides }) {
           <Header src="joker1" >
             <Header.Frame>
               <Header.Group>
-                <Header.Logo to={ROUTES.Home} src={logo} alt="Netflix" />
+                {/* <Header.Logo to={ROUTES.Home} src={logo} alt="Netflix" /> */}
+                <h1 style= {{color: 'red', fontSize: '3rem'}}>Nueflix</h1>
 
                 <Header.TextLink active={category === 'series' ? 'true' : 'false'} onClick={() => {
                   setCategory('series')
@@ -100,7 +103,8 @@ export function BrowseContainer({ slides }) {
                 City. Arthur wears two masks -- the one he paints for his day job as a clown, and the guise he projects in a
                 futile attempt to feel like he's part of the world around him.
               </Header.Text>
-              <Header.PlayButton>Play</Header.PlayButton>
+              <Header.PlayButton onClick={handleClick} >  Play</Header.PlayButton>
+           
             </Header.Feature>
           </Header>
           <Cards.Group>
@@ -124,7 +128,7 @@ export function BrowseContainer({ slides }) {
                 <Cards.Feature category={category}>
                   <Player>
                     <Player.Button />
-                    <Player.Video src="/Videos/RM_92.48_Ramos.mp4" />
+                    <Player.Video  src={category === 'series' ? '/Videos/Family Guy Theme Song [Orginal - HD].mp4' : '/Videos/THE SOCIAL NETWORK - Official Trailer [2010] (HD).mp4'} />
                   </Player>
 
                 </Cards.Feature>

@@ -16,7 +16,7 @@ export default function FooterContainer() {
             <footer.Link href= '#'>Investor Relations</footer.Link>
             <footer.Link href= '#'>Ways To Watch</footer.Link>
             <footer.Link href= '#'>Coporate Information</footer.Link>
-            <footer.Link href= '#'>Netflix Orignals</footer.Link>
+            <footer.Link href= '#'>Orignals</footer.Link>
           </footer.Column>
 
           <footer.Column>
@@ -41,7 +41,7 @@ export default function FooterContainer() {
           </footer.Column>
         </footer.Row>
         <footer.Break/>
-        <footer.Text>Netflix India</footer.Text>
+        <footer.Text>Nueflix</footer.Text>
     </footer>
     
     </>

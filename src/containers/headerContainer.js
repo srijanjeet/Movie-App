@@ -8,7 +8,8 @@ export default function HeaderContainer({ children }) {
     <>
       <Header>
         <Header.Frame>
-          <Header.Logo to = {ROUTES.Home} alt = "Netflix" src ={logo} />
+          {/* <Header.Logo to = {ROUTES.Home} alt = "Nueflix" /> */}
+          <h1 style= {{color: 'red', fontSize: '3rem'}}>Nueflix</h1>
           <Header.ButtonLink to = {ROUTES.SIGN_IN}> Sign In</Header.ButtonLink>
         </Header.Frame>
           {children}
